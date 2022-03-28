@@ -1,0 +1,49 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h2>Posts</h2>
+    <article class="media content-section">
+        <!--img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}"-->
+        <div class="media-body">
+            <div class="article-metadata">
+            <a class="mr-2" href="#">{{ object.author }}</a>
+            <small class="text-muted">{{ object.date_posted}}</small>
+            {% if user == object.author %}
+                <a class="btn btn-outline-secondary" href="{% url 'post-update' object.id %}">Update</a>
+                <a class="btn btn-outline-danger" href="{% url 'post-delete' object.id %}">Delete</a>
+            {% endif %}
+
+            </div>
+            
+            <h2 class="article-title">Company:     {{ object.company }}</h2>
+            <div class="article-metadata">
+            <h5 class="article-title">{{ object.position }}</h5>
+            <h5 class="article-title">Location:   {{ object.location }}</h5>
+            <h5 class="article-title">Package:    {{ object.package }}</h5>
+            <h5 class="article-title">Vanue:      {{ object.vanue }}</h5>
+            {% if object.time %}
+            <h5 class="article-title">Time:    {{ object.time }}</h5>
+            {% endif %}
+            {% if object.description %}
+            <h6 class="article-content">Description:    {{ object.description }}</h6>
+            {% endif %}
+            </div>
+            <small class="text-muted">Last Date to register  {{ object.last_registration_date }}</small>
+            <a class="btn btn-outline-secondary" href="{% url 'post-comment' object.id %}">Comment</a>
+            
+        </div>
+    </article>
+
+    <div class="card-footer">
+        <h6 style="color:yellowgreen">Comments:</h6>
+        {% for comment in comments %}
+            {% if comment.post.id == post.id %}
+                <span class="font-weight-bold">{{ comment.author.first_name }} {{ comment.author.last_name}}&#58;</span>
+                {{ comment }}<br>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+
+        
+{% endblock content %}

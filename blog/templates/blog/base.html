@@ -1,0 +1,184 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+
+    <head>
+
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+      <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<style type='text/css'>
+
+
+
+    .searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 40px;
+    background-color: #353b48;
+    border-radius: 20px;
+    padding: 2px;
+    }
+
+    .search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 20px;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_input{
+    padding: 0 8px;
+    width: 350px;
+    caret-color:#4194cc;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+    }
+
+    .search_icon{
+    height: 35px;
+    width: 35px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    text-decoration:none;
+    }
+</style>
+
+
+
+
+
+      <style id='onepress-style-inline-css' type='text/css'>
+        #main .video-section section.hero-slideshow-wrapper{background:transparent}.hero-slideshow-wrapper:after{position:absolute;top:0px;left:0px;width:100%;height:100%;background-color:rgba(0,0,0,0.3);display:block;content:""}.body-desktop .parallax-hero .hero-slideshow-wrapper:after{display:none!important}.parallax-hero .parallax-mirror:after{position:absolute;top:0px;left:0px;width:100%;height:100%;background-color:rgba(0,0,0,0.3);display:block;content:""}.body-desktop .parallax-hero .hero-slideshow-wrapper:after{display:none!important}.parallax-hero .parallax-mirror:after{position:absolute;top:0px;left:0px;width:100%;height:100%;background-color:rgba(0,0,0,0.3);display:block;content:""}a,.screen-reader-text:hover,.screen-reader-text:active,.screen-reader-text:focus,.header-social a,.onepress-menu a:hover,.onepress-menu ul li a:hover,.onepress-menu li.onepress-current-item>a,.onepress-menu ul li.current-menu-item>a,.onepress-menu>li a.menu-actived,.onepress-menu.onepress-menu-mobile li.onepress-current-item>a,.site-footer a,.site-footer .footer-social a:hover,.site-footer .btt a:hover,.highlight,#comments .comment .comment-wrapper .comment-meta .comment-time:hover,#comments .comment .comment-wrapper .comment-meta .comment-reply-link:hover,#comments .comment .comment-wrapper .comment-meta .comment-edit-link:hover,.btn-theme-primary-outline,.sidebar .widget a:hover,.section-services .service-item .service-image i,.counter_item .counter__number,.team-member .member-thumb .member-profile a:hover,.icon-background-default{color:#002877}input[type="reset"],input[type="submit"],input[type="submit"],.nav-links a:hover,.btn-theme-primary,.btn-theme-primary-outline:hover,.card-theme-primary,.woocommerce #respond input#submit,.woocommerce a.button,.woocommerce button.button,.woocommerce input.button,.woocommerce button.button.alt{background:#002877}.btn-theme-primary-outline,.btn-theme-primary-outline:hover,.pricing__item:hover,.card-theme-primary,.entry-content blockquote{border-color:#002877}.site-header{background:#ffffff;border-bottom:0px none}.onepress-menu>li>a{color:#ffffff}.onepress-menu>li>a:hover,.onepress-menu>li.onepress-current-item>a{color:#ffffff;-webkit-transition:all 0.5s ease-in-out;-moz-transition:all 0.5s ease-in-out;-o-transition:all 0.5s ease-in-out;transition:all 0.5s ease-in-out}@media screen and (min-width:1140px){.onepress-menu>li:last-child>a{padding-right:17px}.onepress-menu>li>a:hover,.onepress-menu>li.onepress-current-item>a{background:#1e73be;-webkit-transition:all 0.5s ease-in-out;-moz-transition:all 0.5s ease-in-out;-o-transition:all 0.5s ease-in-out;transition:all 0.5s ease-in-out}}#nav-toggle span,#nav-toggle span::before,#nav-toggle span::after,#nav-toggle.nav-is-visible span::before,#nav-toggle.nav-is-visible span::after{background:#ffffff}.site-branding .site-title,.site-branding .site-text-logo{color:#ffffff}.gallery-carousel .g-item{padding:0px 10px}.gallery-carousel{margin-left:-10px;margin-right:-10px}.gallery-grid .g-item,.gallery-masonry .g-item .inner{padding:10px}.gallery-grid,.gallery-masonry{margin:-10px}
+      </style>
+
+
+      <style type='text/css'>
+      
+        .fa-stack        .fa { color: #4194cc; }
+        .fa-stack        .fa.fa-circle-thin { color: #4194cc; }
+        .fa-stack        .fa.fa-circle { opacity:0.0; color:#4194cc; }
+
+        .fa-stack:hover  .fa.fa-user-plus { color: blue; }
+        .fa-stack:hover  .fa.fa-circle-thin { color: blue; }
+        .fa-stack:hover  .fa.fa-circle { opacity: 0.5 }
+      </style>
+
+
+      {% if title %}
+      <title>{{title}}</title>
+      {% else %}
+      <title>No Title</title>
+      {% endif %}
+    </head>
+    <body>
+
+        <header class="site-header">
+            <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+              <div class="container">
+                <a class="navbar-brand mr-4" href="/">Placement Cell Info System</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>,
+                <div class="collapse navbar-collapse" id="navbarToggle">
+                  <div class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link" href="{% url 'blog-home'%}">Home</a>
+                    <a class="nav-item nav-link" href="{% url 'blog-about'%}">About</a>
+                    <!-- Search form -->
+                    {% if user.is_authenticated %}
+                      <div class="container h-100">
+                        <div class="d-flex justify-content-center h-100">
+                          <div class="searchbar">
+                            <input class="search_input" type="text" name="" placeholder="Search...">
+                            <a href="{% url 'post-detail' 1 %}" class="search_icon"><i class="fas fa-search"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    {% endif %}
+                  </div>
+                  <!-- Navbar Right Side -->
+                  <div class="navbar-nav">
+                    {% if user.is_authenticated %}
+                      {% if user.is_superuser %}
+                        <a class="nav-item nav-link" href="{% url 'post-create' %}">New Post</a>
+                        <a class="nav-item nav-link" href="/admin/">Admin</a>
+                      {% endif %}
+                      <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+                      <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                    {% else %}
+                    
+                    <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                    <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </header>
+
+
+
+
+          <main role="main" class="container">
+            <div class="row">
+              <div class="col-md-8">
+                {% if messages %}
+                  {% for msg in messages %}
+                    <div class="alert alert-{{ msg.tags }}">
+                      {{msg}}
+                    </div>
+                  {% endfor %}
+                {% endif %}
+                {% block content %}{% endblock %}
+              </div>
+
+              {% if user.is_authenticated %}<br>
+                <div class="col-md-4">
+                  <div class="content-section">
+                    <h3>Sidebar</h3>
+                    <p class='text-muted'>You can find any information from here you'd like.
+                      <ul class="list-group">
+                        <a class="list-group-item list-group-item-light" href='#'>Announcements</a>
+                        <a class="list-group-item list-group-item-light" href='{% url 'placements' %}'>Placements</a>
+                        <a class="list-group-item list-group-item-light" href='{% url 'blog-home'%}'>Latest Posts</a>
+                        <a class="list-group-item list-group-item-light" href='#'>Calendars</a>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </main>
+
+
+
+        <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+
+    </body>
+</html>
